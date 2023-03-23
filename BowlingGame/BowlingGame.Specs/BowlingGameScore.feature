@@ -41,5 +41,7 @@ Scenario: Just an ordinary game with a spare but no bonus
 	And she scores 0 pins and 9 pins
 	And she scores nothing else
 	Then her total score should be 27
+
+	
 	
 	

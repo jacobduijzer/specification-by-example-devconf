@@ -68,6 +68,17 @@ public class BowlingGameScore
     {
         ThrowMany(12, 10);
     }
+    
+    [When(@"she scores the following")]
+    public void WhenSheScoresTheFollowing(Table table)
+    {
+        foreach (var row in table.Rows)
+        {
+            _game.Roll(int.Parse(row[1]));
+            if(row[2] != "x")
+                _game.Roll(int.Parse(row[2]));
+        }
+    }
 
     [Then(@"her total score should be (.*)")]
     public void ThenHerTotalScoreShouldBe(int expectedScore)
@@ -80,6 +91,7 @@ public class BowlingGameScore
         for(var turn = 0; turn < turns; turn++)
             _game.Roll(pins);
     }
+
 
     
 }
