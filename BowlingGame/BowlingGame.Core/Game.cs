@@ -4,6 +4,10 @@ public class Game
 {
     private readonly int[] _score = new int[21];
     private int _currentRoll = 0;
+    
+    public string PlayerName { get; }
+
+    public Game(string playerName) => PlayerName = playerName;
 
     public void Roll(int pins)
     {

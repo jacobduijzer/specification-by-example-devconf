@@ -7,7 +7,7 @@ public class GameShould
     [Fact]
     public void ScoreZeroWhenAllThrowsAreInTheGutter()
     {
-        Game game = new();
+        Game game = new("Test Player");
 
         ThrowMany(20, 0, ref game);
         
@@ -17,7 +17,7 @@ public class GameShould
     [Fact]
     public void ScoreTwentyWhenOnePinAtATime()
     {
-        Game game = new();
+        Game game = new("Test Player");
         
         ThrowMany(20, 1, ref game);
         
@@ -27,7 +27,7 @@ public class GameShould
     [Fact]
     public void ScoreOneSpare()
     {
-        Game game = new();
+        Game game = new("Test Player");
         
         ScoreSpare(ref game);
         game.Roll(3);
@@ -39,7 +39,7 @@ public class GameShould
     [Fact]
     public void ScoreOneStrike()
     {
-        Game game = new();
+        Game game = new("Test Player");
         
         ScoreStrike(ref game);
         game.Roll(3);
@@ -52,7 +52,7 @@ public class GameShould
     [Fact]
     public void CalculatePerfectScore()
     {
-        Game game = new();
+        Game game = new("Test Player");
         
         ThrowMany(12, 10, ref game);
         

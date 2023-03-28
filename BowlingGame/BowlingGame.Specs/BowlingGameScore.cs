@@ -10,9 +10,9 @@ public class BowlingGameScore
     private int _numberOfThrows = 0;
     
     [Given(@"(.*) is playing a game of bowling")]
-    public void GivenNameIsPlayingAGameOfBowling(string name)
+    public void GivenNameIsPlayingAGameOfBowling(string playerName)
     {
-        _game = new Game();
+        _game = new Game(playerName);
     }
 
     [When(@"she throws all balls in the gutter")]
